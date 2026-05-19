@@ -212,11 +212,18 @@ export default function SystemStatus() {
           letter-spacing: 0.05em;
           color: var(--text-muted);
         }
+        [data-theme="light"] .sys-status-badge {
+          background: rgba(255, 255, 255, 0.85);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
         .sys-status-badge:hover {
           color: var(--accent);
           border-color: rgba(var(--accent-rgb), 0.4);
           transform: translateY(-3px);
           box-shadow: 0 10px 25px var(--accent-glow);
+        }
+        [data-theme="light"] .sys-status-badge:hover {
+          box-shadow: 0 10px 25px rgba(255, 75, 140, 0.15);
         }
         .pulse-dot {
           width: 8px;
@@ -250,6 +257,11 @@ export default function SystemStatus() {
           font-family: var(--font-mono);
           animation: terminalOpen 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
+        [data-theme="light"] .sys-terminal-panel {
+          background: rgba(255, 255, 255, 0.94);
+          border: 1px solid rgba(255, 75, 140, 0.2);
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08), 0 0 30px rgba(255, 75, 140, 0.02);
+        }
         @keyframes terminalOpen {
           from { opacity: 0; transform: translateY(15px) scale(0.96); }
           to { opacity: 1; transform: translateY(0) scale(1); }
@@ -263,6 +275,9 @@ export default function SystemStatus() {
           align-items: center;
           padding: 0 15px;
           position: relative;
+        }
+        [data-theme="light"] .terminal-hdr {
+          background: rgba(243, 244, 253, 0.95);
         }
         .window-dots {
           display: flex;
@@ -296,6 +311,9 @@ export default function SystemStatus() {
           border-bottom: 1px dotted var(--border);
           font-size: 10px;
         }
+        [data-theme="light"] .terminal-telemetry {
+          background: rgba(243, 244, 253, 0.5);
+        }
         .tel-lbl { color: var(--text-dim); margin-right: 5px; }
         .tel-val { color: var(--text); font-weight: bold; }
 
@@ -326,6 +344,9 @@ export default function SystemStatus() {
           background: rgba(16, 22, 34, 0.95);
           border-top: 1px solid var(--border);
           gap: 8px;
+        }
+        [data-theme="light"] .terminal-prompt-form {
+          background: rgba(243, 244, 253, 0.95);
         }
         .prompt-lead {
           font-size: 11px;

@@ -252,7 +252,8 @@ export default function Hero({ data }) {
               zIndex: 1,
               animation: 'float-char 6s ease-in-out infinite',
               width: '100%',
-              maxWidth: '540px'
+              maxWidth: '540px',
+              margin: '0 auto'
             }}>
               <img 
                 src={activeTheme === 'light' ? '/image_light.jpg' : '/image.png'} 
@@ -261,6 +262,7 @@ export default function Hero({ data }) {
                   width: '100%',
                   height: 'auto',
                   display: 'block',
+                  margin: '0 auto',
                   borderRadius: '24px',
                   filter: activeTheme === 'light' 
                     ? 'drop-shadow(0 20px 45px rgba(0, 0, 0, 0.15)) drop-shadow(0 0 20px rgba(255, 95, 162, 0.1))'
@@ -353,26 +355,27 @@ export default function Hero({ data }) {
               fontFamily: 'var(--font-mono)',
               fontSize: '13.5px',
               color: 'var(--text-muted)',
-              marginBottom: '1rem',
-              display: 'flex',
-              alignItems: 'center',
-              letterSpacing: '0.05em'
+              marginBottom: '1.2rem',
+              letterSpacing: '0.05em',
+              lineHeight: '1.6',
+              display: 'block',
+              width: '100%'
             }}>
               <span style={{ color: '#00f0ff', marginRight: '6px' }}>&gt;</span>
-              <span>Currently building as </span>
-              <span style={{ color: 'var(--text)', fontWeight: 600, marginLeft: '6px' }}>{typed}</span>
+              Currently building as{' '}
+              <span style={{ color: 'var(--text)', fontWeight: 600 }}>{typed}</span>
               <span style={{ animation: 'blink 1s step-end infinite', color: 'var(--accent)', marginLeft: '2px', fontWeight: 'bold' }}>|</span>
             </div>
 
             {/* 4. Description */}
-            <p style={{
+            <p className="hero-desc" style={{
               fontSize: 'clamp(14px, 1.1vw, 15.5px)',
               lineHeight: '1.65',
               color: 'var(--text-muted)',
               maxWidth: '620px',
               marginBottom: '1.8rem',
               fontFamily: 'var(--font-body)',
-              textAlign: 'left'
+              width: '100%'
             }}>
               I turn complex ideas into seamless, high-impact web experiences — building modern, scalable, and lightning-fast applications that{' '}
               <span style={{
@@ -402,7 +405,7 @@ export default function Hero({ data }) {
               transition: 'background 0.3s ease, border 0.3s ease'
             }}>
               {/* React.js */}
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.4rem', flex: 1, minWidth: '70px' }}>
+              <div className="skill-item-row1" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.4rem', flex: 1, minWidth: '70px' }}>
                 <div className="skill-icon-wrap" style={{ width: '38px', height: '38px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <svg width="26" height="26" viewBox="-11.5 -10.23174 23 20.46348" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="0" cy="0" r="2.05" fill="#00d8ff"/>
@@ -419,7 +422,7 @@ export default function Hero({ data }) {
               <div className="skills-divider" style={{ width: '1px', height: '28px', background: activeTheme === 'light' ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.06)' }} />
 
               {/* Next.js */}
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.4rem', flex: 1, minWidth: '70px' }}>
+              <div className="skill-item-row1" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.4rem', flex: 1, minWidth: '70px' }}>
                 <div className="skill-icon-wrap" style={{ width: '38px', height: '38px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <svg width="24" height="24" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <mask id="mask_next" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="180" height="180">
@@ -438,7 +441,7 @@ export default function Hero({ data }) {
               <div className="skills-divider" style={{ width: '1px', height: '28px', background: activeTheme === 'light' ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.06)' }} />
 
               {/* Node.js */}
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.4rem', flex: 1, minWidth: '70px' }}>
+              <div className="skill-item-row1" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.4rem', flex: 1, minWidth: '70px' }}>
                 <div className="skill-icon-wrap" style={{ width: '38px', height: '38px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <svg width="24" height="24" viewBox="0 0 256 292" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M128 0L24.5 59.8v119.5L128 239l103.5-59.8V59.8L128 0z" fill="#43853d"/>
@@ -452,7 +455,7 @@ export default function Hero({ data }) {
               <div className="skills-divider" style={{ width: '1px', height: '28px', background: activeTheme === 'light' ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.06)' }} />
 
               {/* MongoDB */}
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.4rem', flex: 1, minWidth: '70px' }}>
+              <div className="skill-item-row2" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.4rem', flex: 1, minWidth: '70px' }}>
                 <div className="skill-icon-wrap" style={{ width: '38px', height: '38px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <svg width="22" height="26" viewBox="0 0 256 595" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M122.9 593.7c1.3.8 2.8.8 4.1 0 14.1-8.5 129-79.9 129-335C256 94.6 142.1 4.5 131.7.3c-2.4-1-5.1-1-7.5 0C113.8 4.5 0 94.6 0 258.7c0 255.1 114.9 326.5 122.9 595z" fill="#47a248"/>
@@ -467,7 +470,7 @@ export default function Hero({ data }) {
               <div className="skills-divider" style={{ width: '1px', height: '28px', background: activeTheme === 'light' ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.06)' }} />
 
               {/* AI Integration */}
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.4rem', flex: 1, minWidth: '80px' }}>
+              <div className="skill-item-row2" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.4rem', flex: 1, minWidth: '80px' }}>
                 <div className="skill-icon-wrap" style={{ width: '38px', height: '38px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff5fa2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1 0-3.12 3 3 0 0 1 0-3.88 2.5 2.5 0 0 1 0-3.12A2.5 2.5 0 0 1 9.5 2z"/>
@@ -701,6 +704,14 @@ export default function Hero({ data }) {
           50% { transform: scale(1.08); box-shadow: 0 0 28px rgba(var(--accent-rgb), 0.7); }
         }
         
+        /* Dynamic Centering Rules */
+        .typing-subtitle {
+          text-align: left;
+        }
+        .hero-desc {
+          text-align: left;
+        }
+
         /* Interactive Link Hovers */
         .footer-link-text:hover {
           color: #ff5fa2 !important;
@@ -725,7 +736,10 @@ export default function Hero({ data }) {
             align-items: center !important;
           }
           .typing-subtitle {
-            justify-content: center !important;
+            text-align: center !important;
+          }
+          .hero-desc {
+            text-align: center !important;
           }
           .hero-skills-row {
             justify-content: center !important;
@@ -756,11 +770,22 @@ export default function Hero({ data }) {
           }
           .hero-skills-row {
             padding: 0.8rem 1rem !important;
+            display: flex !important;
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+            gap: 1.2rem 0.5rem !important;
           }
           .skills-divider {
             display: none !important;
           }
-          .hero-skills-row > div {
+          .skill-item-row1 {
+            flex: 0 0 28% !important;
+            max-width: 28% !important;
+            min-width: 60px !important;
+          }
+          .skill-item-row2 {
+            flex: 0 0 42% !important;
+            max-width: 42% !important;
             min-width: 60px !important;
           }
           .footer-contacts {
