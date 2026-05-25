@@ -16,7 +16,7 @@ export default function Hero({ data }) {
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    
+
     // Set initial theme
     const htmlTheme = document.documentElement.getAttribute('data-theme') || 'dark';
     setActiveTheme(htmlTheme);
@@ -156,7 +156,7 @@ export default function Hero({ data }) {
         position: 'relative', zIndex: 1, width: '100%', maxWidth: '1280px', margin: '0 auto',
         display: 'flex', flexDirection: 'column', gap: '3rem'
       }}>
-        
+
         {/* Upper Layout: Mascot Left & Content Right */}
         <div className="hero-main-grid" style={{
           display: 'grid',
@@ -165,7 +165,7 @@ export default function Hero({ data }) {
           alignItems: 'center',
           width: '100%'
         }}>
-          
+
           {/* Left Column: Robot Mascot (Left Side) */}
           <div className="hero-mascot-col" style={{
             position: 'relative',
@@ -186,7 +186,7 @@ export default function Hero({ data }) {
               zIndex: 0,
               pointerEvents: 'none'
             }} />
-            
+
             {/* Dual-tone Cyan glow behind Robot */}
             <div style={{
               position: 'absolute',
@@ -215,7 +215,7 @@ export default function Hero({ data }) {
             }}>
               &lt;/&gt;
             </div>
-            
+
             <div className="floating-code-tag" style={{
               position: 'absolute',
               left: '8%',
@@ -255,20 +255,20 @@ export default function Hero({ data }) {
               maxWidth: '540px',
               margin: '0 auto'
             }}>
-              <img 
-                src={activeTheme === 'light' ? '/image_light.jpg' : '/image.png'} 
-                alt="Krishna Chotaliya - Chibi 3D Mascot" 
+              <img
+                src={activeTheme === 'light' ? '/image_light.jpg' : '/image.png'}
+                alt="Krishna Chotaliya - Chibi 3D Mascot"
                 style={{
                   width: '100%',
                   height: 'auto',
                   display: 'block',
                   margin: '0 auto',
                   borderRadius: '24px',
-                  filter: activeTheme === 'light' 
+                  filter: activeTheme === 'light'
                     ? 'drop-shadow(0 20px 45px rgba(0, 0, 0, 0.15)) drop-shadow(0 0 20px rgba(255, 95, 162, 0.1))'
                     : 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 30px rgba(255, 95, 162, 0.18))',
                   transition: 'all 0.3s ease'
-                }} 
+                }}
               />
             </div>
           </div>
@@ -319,7 +319,7 @@ export default function Hero({ data }) {
                 flex: 1,
                 background: 'linear-gradient(90deg, transparent, #ff5fa2)'
               }} />
-              
+
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                 <span style={{
                   fontFamily: 'var(--font-mono)',
@@ -408,11 +408,11 @@ export default function Hero({ data }) {
               <div className="skill-item-row1" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.4rem', flex: 1, minWidth: '70px' }}>
                 <div className="skill-icon-wrap" style={{ width: '38px', height: '38px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <svg width="26" height="26" viewBox="-11.5 -10.23174 23 20.46348" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="0" cy="0" r="2.05" fill="#00d8ff"/>
+                    <circle cx="0" cy="0" r="2.05" fill="#00d8ff" />
                     <g stroke="#00d8ff" strokeWidth="1" fill="none">
-                      <ellipse rx="11" ry="4.2"/>
-                      <ellipse rx="11" ry="4.2" transform="rotate(60)"/>
-                      <ellipse rx="11" ry="4.2" transform="rotate(120)"/>
+                      <ellipse rx="11" ry="4.2" />
+                      <ellipse rx="11" ry="4.2" transform="rotate(60)" />
+                      <ellipse rx="11" ry="4.2" transform="rotate(120)" />
                     </g>
                   </svg>
                 </div>
@@ -426,12 +426,12 @@ export default function Hero({ data }) {
                 <div className="skill-icon-wrap" style={{ width: '38px', height: '38px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <svg width="24" height="24" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <mask id="mask_next" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="180" height="180">
-                      <circle cx="90" cy="90" r="90" fill="black"/>
+                      <circle cx="90" cy="90" r="90" fill="black" />
                     </mask>
                     <g mask="url(#mask_next)">
-                      <circle cx="90" cy="90" r="90" fill="transparent" stroke="var(--text)" strokeWidth="6"/>
-                      <path d="M149.508 157.52L69.142 54H54V125.928H70.2858V75.6L140.22 164.88C143.518 162.616 146.623 160.144 149.508 157.52Z" fill="var(--text)"/>
-                      <rect x="115.142" y="54" width="16.2858" height="71.928" fill="var(--text)"/>
+                      <circle cx="90" cy="90" r="90" fill="transparent" stroke="var(--text)" strokeWidth="6" />
+                      <path d="M149.508 157.52L69.142 54H54V125.928H70.2858V75.6L140.22 164.88C143.518 162.616 146.623 160.144 149.508 157.52Z" fill="var(--text)" />
+                      <rect x="115.142" y="54" width="16.2858" height="71.928" fill="var(--text)" />
                     </g>
                   </svg>
                 </div>
@@ -444,9 +444,9 @@ export default function Hero({ data }) {
               <div className="skill-item-row1" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.4rem', flex: 1, minWidth: '70px' }}>
                 <div className="skill-icon-wrap" style={{ width: '38px', height: '38px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <svg width="24" height="24" viewBox="0 0 256 292" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M128 0L24.5 59.8v119.5L128 239l103.5-59.8V59.8L128 0z" fill="#43853d"/>
-                    <path d="M128 23.3L37.8 75.4V179.6L128 231.7L218.2 179.6V75.4L128 23.3z" fill="#333333"/>
-                    <path d="M110.8 157.2v-36.9c0-5 3.3-8.8 8.8-8.8 5 0 8 3.3 8 8.8v36.9c0 5-3.3 8.8-8 8.8-5.5 0-8.8-3.8-8.8-8.8zm23.3 0v-63.5c0-5 3.3-8.8 8-8.8 5 0 8 3.3 8 8.8v63.5c0 5-3.3 8.8-8 8.8-5.3 0-8-3.8-8-8.8z" fill="#ffffff"/>
+                    <path d="M128 0L24.5 59.8v119.5L128 239l103.5-59.8V59.8L128 0z" fill="#43853d" />
+                    <path d="M128 23.3L37.8 75.4V179.6L128 231.7L218.2 179.6V75.4L128 23.3z" fill="#333333" />
+                    <path d="M110.8 157.2v-36.9c0-5 3.3-8.8 8.8-8.8 5 0 8 3.3 8 8.8v36.9c0 5-3.3 8.8-8 8.8-5.5 0-8.8-3.8-8.8-8.8zm23.3 0v-63.5c0-5 3.3-8.8 8-8.8 5 0 8 3.3 8 8.8v63.5c0 5-3.3 8.8-8 8.8-5.3 0-8-3.8-8-8.8z" fill="#ffffff" />
                   </svg>
                 </div>
                 <span style={{ fontSize: '11.5px', color: 'var(--text)', fontWeight: 600 }}>Node.js</span>
@@ -458,10 +458,10 @@ export default function Hero({ data }) {
               <div className="skill-item-row2" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.4rem', flex: 1, minWidth: '70px' }}>
                 <div className="skill-icon-wrap" style={{ width: '38px', height: '38px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <svg width="22" height="26" viewBox="0 0 256 595" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M122.9 593.7c1.3.8 2.8.8 4.1 0 14.1-8.5 129-79.9 129-335C256 94.6 142.1 4.5 131.7.3c-2.4-1-5.1-1-7.5 0C113.8 4.5 0 94.6 0 258.7c0 255.1 114.9 326.5 122.9 595z" fill="#47a248"/>
-                    <path d="M128 593.8V1.3c8.1 3.2 97.4 75.3 97.4 257.4 0 220-80.9 285.5-97.4 335.1z" fill="#3fa037"/>
-                    <path d="M128 474V154.2c-2.5-1.5-5.8-3.8-8.9-6.3V482c3.1-2.5 6.4-4.8 8.9-8z" fill="#ffffff"/>
-                    <path d="M128 474v8c2.5-2.5 5.8-5.8 8.9-8.8v-320c-3.1 3-6.4 6.3-8.9 8.8v312z" fill="#3f2c00"/>
+                    <path d="M122.9 593.7c1.3.8 2.8.8 4.1 0 14.1-8.5 129-79.9 129-335C256 94.6 142.1 4.5 131.7.3c-2.4-1-5.1-1-7.5 0C113.8 4.5 0 94.6 0 258.7c0 255.1 114.9 326.5 122.9 595z" fill="#47a248" />
+                    <path d="M128 593.8V1.3c8.1 3.2 97.4 75.3 97.4 257.4 0 220-80.9 285.5-97.4 335.1z" fill="#3fa037" />
+                    <path d="M128 474V154.2c-2.5-1.5-5.8-3.8-8.9-6.3V482c3.1-2.5 6.4-4.8 8.9-8z" fill="#ffffff" />
+                    <path d="M128 474v8c2.5-2.5 5.8-5.8 8.9-8.8v-320c-3.1 3-6.4 6.3-8.9 8.8v312z" fill="#3f2c00" />
                   </svg>
                 </div>
                 <span style={{ fontSize: '11.5px', color: 'var(--text)', fontWeight: 600 }}>MongoDB</span>
@@ -473,10 +473,10 @@ export default function Hero({ data }) {
               <div className="skill-item-row2" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.4rem', flex: 1, minWidth: '80px' }}>
                 <div className="skill-icon-wrap" style={{ width: '38px', height: '38px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff5fa2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1 0-3.12 3 3 0 0 1 0-3.88 2.5 2.5 0 0 1 0-3.12A2.5 2.5 0 0 1 9.5 2z"/>
-                    <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 0-3.12 3 3 0 0 0 0-3.88 2.5 2.5 0 0 0 0-3.12A2.5 2.5 0 0 0 14.5 2z"/>
-                    <path d="M12 5h1"/><path d="M12 9h2"/><path d="M12 14h2"/><path d="M12 19h1"/>
-                    <path d="M11 5h-1"/><path d="M10 9H8"/><path d="M10 14H8"/><path d="M11 19h-1"/>
+                    <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1 0-3.12 3 3 0 0 1 0-3.88 2.5 2.5 0 0 1 0-3.12A2.5 2.5 0 0 1 9.5 2z" />
+                    <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 0-3.12 3 3 0 0 0 0-3.88 2.5 2.5 0 0 0 0-3.12A2.5 2.5 0 0 0 14.5 2z" />
+                    <path d="M12 5h1" /><path d="M12 9h2" /><path d="M12 14h2" /><path d="M12 19h1" />
+                    <path d="M11 5h-1" /><path d="M10 9H8" /><path d="M10 14H8" /><path d="M11 19h-1" />
                   </svg>
                 </div>
                 <span style={{ fontSize: '11.5px', color: 'var(--text)', fontWeight: 600 }}>AI Integration</span>
@@ -498,7 +498,7 @@ export default function Hero({ data }) {
                 onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = '0 8px 30px var(--accent-glow)'; }}>
                 Explore Projects
               </a>
-              <a href="/Krishna Chotaliya.pdf" target="_blank" rel="noreferrer" style={{
+              <a href="/Krishna_Chotaliya.pdf" target="_blank" rel="noreferrer" style={{
                 padding: '12px 28px',
                 background: activeTheme === 'light' ? 'rgba(0, 0, 0, 0.05)' : 'rgba(255, 255, 255, 0.08)',
                 color: 'var(--text)', fontFamily: 'var(--font-display)', fontWeight: 700,
@@ -544,8 +544,8 @@ export default function Hero({ data }) {
             {/* Location */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem' }}>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ff5fa2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                <circle cx="12" cy="10" r="3"/>
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
               </svg>
               <span style={{ fontSize: '13.5px', color: 'var(--text)', fontWeight: 500 }}>Ahmedabad, India</span>
             </div>
@@ -553,7 +553,7 @@ export default function Hero({ data }) {
             {/* GitHub */}
             <a href={data.github} target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.7rem', textDecoration: 'none' }} className="clickable">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
               </svg>
               <span className="footer-link-text" style={{ fontSize: '13.5px', color: 'var(--text-muted)', transition: 'color 0.2s' }}>github.com/Krish1116</span>
             </a>
@@ -561,8 +561,8 @@ export default function Hero({ data }) {
             {/* Email */}
             <a href={`mailto:${data.email}`} style={{ display: 'flex', alignItems: 'center', gap: '0.7rem', textDecoration: 'none' }} className="clickable">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ff5fa2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <polyline points="22,6 12,13 2,6"/>
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
               </svg>
               <span className="footer-link-text" style={{ fontSize: '13.5px', color: 'var(--text-muted)', transition: 'color 0.2s' }}>heykrish333@gmail.com</span>
             </a>
@@ -570,9 +570,9 @@ export default function Hero({ data }) {
             {/* LinkedIn */}
             <a href={data.linkedin} target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.7rem', textDecoration: 'none' }} className="clickable">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                <rect x="2" y="9" width="4" height="12"/>
-                <circle cx="4" cy="4" r="2"/>
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
               </svg>
               <span className="footer-link-text" style={{ fontSize: '13.5px', color: 'var(--text-muted)', transition: 'color 0.2s' }}>linkedin.com/in/krish1116</span>
             </a>
@@ -580,7 +580,7 @@ export default function Hero({ data }) {
             {/* Phone */}
             <a href={`tel:${data.phone}`} style={{ display: 'flex', alignItems: 'center', gap: '0.7rem', textDecoration: 'none' }} className="clickable">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ff5fa2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
               <span className="footer-link-text" style={{ fontSize: '13.5px', color: 'var(--text-muted)', transition: 'color 0.2s' }}>+91 7203802301</span>
             </a>
@@ -588,9 +588,9 @@ export default function Hero({ data }) {
             {/* Website */}
             <a href="https://krish-portfolio1611.netlify.app" target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.7rem', textDecoration: 'none' }} className="clickable">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <line x1="2" y1="12" x2="22" y2="12"/>
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
               </svg>
               <span className="footer-link-text" style={{ fontSize: '13.5px', color: 'var(--text-muted)', transition: 'color 0.2s' }}>krish-portfolio1611.netlify.app</span>
             </a>
@@ -620,9 +620,9 @@ export default function Hero({ data }) {
             {/* Stat 2: 10+ Projects */}
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.8rem' }}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginTop: '2px' }}>
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                <line x1="8" y1="21" x2="16" y2="21"/>
-                <line x1="12" y1="17" x2="12" y2="21"/>
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
               </svg>
               <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.2 }}>
                 <span style={{ fontSize: '16px', color: 'var(--text)', fontWeight: 800 }}>10+</span>
@@ -633,7 +633,7 @@ export default function Hero({ data }) {
             {/* Stat 3: Scalable */}
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.8rem' }}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d946ef" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginTop: '2px' }}>
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
               </svg>
               <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.2 }}>
                 <span style={{ fontSize: '15px', color: 'var(--text)', fontWeight: 800 }}>Scalable</span>
@@ -644,10 +644,10 @@ export default function Hero({ data }) {
             {/* Stat 4: Client Focused */}
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.8rem' }}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff5fa2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginTop: '2px' }}>
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                <circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
               </svg>
               <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.2 }}>
                 <span style={{ fontSize: '15px', color: 'var(--text)', fontWeight: 800 }}>Client</span>
