@@ -1,15 +1,16 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from "react";
 
 export default function SystemStatus() {
   const [isOpen, setIsOpen] = useState(false);
-  const [commandInput, setCommandInput] = useState('');
+  const [commandInput, setCommandInput] = useState("");
   const [history, setHistory] = useState([
-    { text: '[SYSTEM CORE] Initialized Antigravity-v2.0...', type: 'sys' },
-    { text: '[STATUS] MERN Engine Online & Ready.', type: 'sys' },
-    { text: 'Type "help" to see available command parameters.', type: 'info' }
+    { text: "[SYSTEM CORE] Initialized Antigravity-v2.0...", type: "sys" },
+    { text: "[STATUS] MERN Engine Online & Ready.", type: "sys" },
+    { text: 'Type "help" to see available command parameters.', type: "info" },
   ]);
-  const [currentTime, setCurrentTime] = useState('');
+  const [currentTime, setCurrentTime] = useState("");
   const [ping, setPing] = useState(42);
+  const [mounted, setMounted] = useState(false);
   const historyEndRef = useRef(null);
 
   // Sound Synth Click feedback
@@ -18,7 +19,7 @@ export default function SystemStatus() {
       const ctx = new (window.AudioContext || window.webkitAudioContext)();
       const osc = ctx.createOscillator();
       const gain = ctx.createGain();
-      osc.type = 'sine';
+      osc.type = "sine";
       osc.frequency.setValueAtTime(750, ctx.currentTime);
       osc.frequency.exponentialRampToValueAtTime(180, ctx.currentTime + 0.04);
       gain.gain.setValueAtTime(0.012, ctx.currentTime);
@@ -32,19 +33,21 @@ export default function SystemStatus() {
 
   // Clock & Ping updates
   useEffect(() => {
+    setMounted(true);
+
     const updateStats = () => {
       // Ahmedabad, India Local Time
-      const timeStr = new Date().toLocaleTimeString('en-US', {
-        timeZone: 'Asia/Kolkata',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: true
+      const timeStr = new Date().toLocaleTimeString("en-US", {
+        timeZone: "Asia/Kolkata",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true,
       });
       setCurrentTime(timeStr);
 
       // Fluctuating server ping simulation
-      setPing(prev => {
+      setPing((prev) => {
         const diff = Math.floor(Math.random() * 9) - 4;
         return Math.max(30, Math.min(60, prev + diff));
       });
@@ -58,7 +61,7 @@ export default function SystemStatus() {
   // Auto-scroll terminal log
   useEffect(() => {
     if (historyEndRef.current) {
-      historyEndRef.current.scrollIntoView({ behavior: 'smooth' });
+      historyEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [history, isOpen]);
 
@@ -69,75 +72,110 @@ export default function SystemStatus() {
     if (!cmd) return;
 
     playClickSound();
-    const newHistory = [...history, { text: `visitor@krishna:~$ ${commandInput}`, type: 'input' }];
+    const newHistory = [
+      ...history,
+      { text: `visitor@krishna:~$ ${commandInput}`, type: "input" },
+    ];
 
     switch (cmd) {
-      case 'help':
+      case "help":
         newHistory.push({
-          text: 'Available Commands:\n  [about, skills, experience, projects, contact] - Scroll to section\n  [clear] - Clear terminal log\n  [lofi]  - Toggle lofi background music\n  [hack]  - Trigger system core matrix breach\n  [ping]  - Check actual connection latency',
-          type: 'info'
+          text: "Available Commands:\n  [about, skills, experience, projects, contact] - Scroll to section\n  [clear] - Clear terminal log\n  [lofi]  - Toggle lofi background music\n  [hack]  - Trigger system core matrix breach\n  [ping]  - Check actual connection latency",
+          type: "info",
         });
         break;
-      case 'about':
-      case 'skills':
-      case 'experience':
-      case 'projects':
-      case 'contact':
-        newHistory.push({ text: `Navigating to #${cmd} section...`, type: 'success' });
+      case "about":
+      case "skills":
+      case "experience":
+      case "projects":
+      case "contact":
+        newHistory.push({
+          text: `Navigating to #${cmd} section...`,
+          type: "success",
+        });
         setTimeout(() => {
           const el = document.getElementById(cmd);
-          if (el) el.scrollIntoView({ behavior: 'smooth' });
+          if (el) el.scrollIntoView({ behavior: "smooth" });
         }, 300);
         break;
-      case 'clear':
+      case "clear":
         setHistory([]);
-        setCommandInput('');
+        setCommandInput("");
         return;
-      case 'ping':
-        newHistory.push({ text: `PING core-node.krishna.dev: 64 bytes. time=${ping}ms ttl=56 status=ACTIVE`, type: 'success' });
+      case "ping":
+        newHistory.push({
+          text: `PING core-node.krishna.dev: 64 bytes. time=${ping}ms ttl=56 status=ACTIVE`,
+          type: "success",
+        });
         break;
-      case 'lofi':
+      case "lofi":
         // Find lofi button inside Hero component and click it
-        const lofiBtn = document.querySelector('.audio-music-container button');
+        const lofiBtn = document.querySelector(".audio-music-container button");
         if (lofiBtn) {
           lofiBtn.click();
-          newHistory.push({ text: 'Toggled lofi music player core states.', type: 'success' });
+          newHistory.push({
+            text: "Toggled lofi music player core states.",
+            type: "success",
+          });
         } else {
-          newHistory.push({ text: 'Error: Ambient Music Player not found in viewport.', type: 'err' });
+          newHistory.push({
+            text: "Error: Ambient Music Player not found in viewport.",
+            type: "err",
+          });
         }
         break;
-      case 'hack':
-        newHistory.push({ text: 'INITIALIZING QUANTUM BREACH PROTOCOL...', type: 'err' });
-        newHistory.push({ text: '01001000 01000001 01000011 01001011...', type: 'err' });
+      case "hack":
+        newHistory.push({
+          text: "INITIALIZING QUANTUM BREACH PROTOCOL...",
+          type: "err",
+        });
+        newHistory.push({
+          text: "01001000 01000001 01000011 01001011...",
+          type: "err",
+        });
         setTimeout(() => {
-          setHistory(prev => [
+          setHistory((prev) => [
             ...prev,
-            { text: 'WARNING: INTUSION DETECTED! SHIELDING ACTIVE.', type: 'err' },
-            { text: 'Access Denied: Krishna\'s developer defense core is too strong!', type: 'err' }
+            {
+              text: "WARNING: INTUSION DETECTED! SHIELDING ACTIVE.",
+              type: "err",
+            },
+            {
+              text: "Access Denied: Krishna's developer defense core is too strong!",
+              type: "err",
+            },
           ]);
         }, 600);
         break;
       default:
-        newHistory.push({ text: `bash: command not found: ${cmd}. Type "help" for a list of diagnostics.`, type: 'err' });
+        newHistory.push({
+          text: `bash: command not found: ${cmd}. Type "help" for a list of diagnostics.`,
+          type: "err",
+        });
     }
 
     setHistory(newHistory);
-    setCommandInput('');
+    setCommandInput("");
   };
 
   return (
     <>
-      {/* Floating pulse status badge */}
-      <div 
-        onClick={() => { playClickSound(); setIsOpen(!isOpen); }}
-        className="sys-status-badge"
-        title="Open interactive Developer Terminal"
-      >
-        <span className="pulse-dot" />
-        <span className="status-lbl">
-          {isOpen ? '[CLOSE CORE CONSOLE]' : '[CORE STATUS: ONLINE]'}
-        </span>
-      </div>
+      {/* Floating pulse status badge - Only render after hydration */}
+      {mounted && (
+        <div
+          onClick={() => {
+            playClickSound();
+            setIsOpen(!isOpen);
+          }}
+          className="sys-status-badge"
+          title="Open interactive Developer Terminal"
+        >
+          <span className="pulse-dot" />
+          <span className="status-lbl">
+            {isOpen ? "[CLOSE CORE CONSOLE]" : "[CORE STATUS: ONLINE]"}
+          </span>
+        </div>
+      )}
 
       {/* Retro Glass Terminal Panel */}
       {isOpen && (
@@ -145,7 +183,10 @@ export default function SystemStatus() {
           {/* Header Bar */}
           <div className="terminal-hdr">
             <div className="window-dots">
-              <span className="dot dot-close" onClick={() => setIsOpen(false)} />
+              <span
+                className="dot dot-close"
+                onClick={() => setIsOpen(false)}
+              />
               <span className="dot dot-min" onClick={() => setIsOpen(false)} />
               <span className="dot dot-max" />
             </div>
@@ -153,16 +194,23 @@ export default function SystemStatus() {
           </div>
 
           {/* Telemetry Stats Panel */}
-          <div className="terminal-telemetry">
-            <div className="tel-item">
-              <span className="tel-lbl">PING:</span>
-              <span className="tel-val" style={{ color: ping > 50 ? '#f43f5e' : '#00ffd1' }}>{ping}ms</span>
+          {mounted && (
+            <div className="terminal-telemetry">
+              <div className="tel-item">
+                <span className="tel-lbl">PING:</span>
+                <span
+                  className="tel-val"
+                  style={{ color: ping > 50 ? "#f43f5e" : "#00ffd1" }}
+                >
+                  {ping}ms
+                </span>
+              </div>
+              <div className="tel-item">
+                <span className="tel-lbl">TIME (IST):</span>
+                <span className="tel-val">{currentTime || "--:--:--"}</span>
+              </div>
             </div>
-            <div className="tel-item">
-              <span className="tel-lbl">TIME (IST):</span>
-              <span className="tel-val">{currentTime || '--:--:--'}</span>
-            </div>
-          </div>
+          )}
 
           {/* Output log area */}
           <div className="terminal-logs">
